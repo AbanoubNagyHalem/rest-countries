@@ -1,13 +1,169 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+
+:root {
+  /*  (Dark Mode Elements)*/
+  --DarkBlue: hsl(209, 23%, 22%);
+  /*  (Dark Mode Text & Light Mode Elements)*/
+  --White: hsl(0, 0%, 100%);
+  /*  (Dark Mode Background)*/
+  --VeryDarkBg: hsl(207, 26%, 17%);
+  /*  (Light Mode Text)*/
+  --VeryDarkText: hsl(200, 15%, 8%);
+  /*  (Light Mode Input)*/
+  --DarkGrayInput: hsl(0, 0%, 52%);
+  /*  (Light Mode Background)*/
+  --VeryLightGray: hsl(0, 0%, 98%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* global */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+}
+
+
+.light {
+  background: var(--VeryLightGray);
+  color: var(--VeryDarkText);
+}
+
+.dark {
+  background: var(--VeryDarkBg);
+  color: var(--White);
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+
+/* header */
+
+.header {
+  padding: 15px 0;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .toggle-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+/* just change mode  */
+.header.light {}
+
+.header.dark {
+  background-color: var(--DarkBlue);
+}
+
+
+/* filtering */
+
+.filtering {
+  padding: 50px 0;
+}
+
+.filtering .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filtering .inputSearch {
+  width: 40%;
+  padding: 15px 0 15px 20px;
+}
+
+
+/* just change mode  */
+.filtering.dark .inputSearch {
+  background-color: var(--DarkBlue);
+  color: var(--White);
+}
+
+.filtering.dark .inputSearch::placeholder {
+  color: var(--White);
+}
+
+
+.filtering.dark {
+  background: var(--VeryDarkBg);
+  color: var(--White);
+}
+
+.filtering.dark .inputFilter .btn-primary {
+  background-color: var(--DarkBlue);
+  border: none;
+  padding: 15px 50px 15px 20px;
+}
+
+.filtering.light .inputFilter .btn-primary {
+  background-color: var(--White);
+  color: var(--VeryDarkText);
+  border: none;
+  padding: 15px 50px 15px 20px;
+}
+
+
+.filtering.dark .inputFilter .dropdown-menu {
+  background-color: var(--DarkBlue);
+  padding: 10px 50px 10px 0;
+
+}
+
+.filtering.light .inputFilter .dropdown-menu {
+  background-color: var(--White);
+  color: var(--VeryDarkText);
+  border: none;
+}
+
+.filtering.dark .inputFilter .dropdown-item {
+  color: var(--White);
+}
+
+.filtering.dark .inputFilter .dropdown-item:hover {
+  background-color: #495057;
+}
+
+.filtering.light .inputFilter .dropdown-item:hover {
+  background-color: #495057;
+}
+
+/* cards */
+.cards .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 60px;
+}
+
+.cards .card-img-top {
+  width: 100%;
+  height: 50%;
+}
+
+
+/* just change mode  */
+.cards.dark .card {
+  background-color: var(--DarkBlue);
+  color: var(--White);
 }
